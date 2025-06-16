@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サロポン | 広告を"見たい"に変える新広告プラットフォーム</title>
+    <meta name="description" content="ユーザーが自ら広告を見て、サロンで使えるポイントを貯める。広告主には驚異のクリック率22%を、サロンには顧客囲い込みと新収益を提供する、特許取得済の新広告プラットフォーム「サロポン」。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSSリセット & 基本設定 --- */
+        :root {
+            --primary-color: #0d2a57; /* 濃い紺色 */
+            --secondary-color: #3b82f6; /* 明るい青 */
+            --accent-color: #f59e0b;  /* アクセントの黄色 */
+            --bg-color: #f8fafc; /* 薄い背景色 */
+            --text-color: #334155; /* 基本テキスト色 */
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+        
+        section:nth-child(odd) {
+            background-color: var(--bg-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            color: var(--text-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-color), #f97316);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .cta-button.secondary {
+             background: var(--secondary-color);
+        }
+
+        /* --- 1. ファーストビュー --- */
+        .hero {
+            background-color: var(--primary-color);
+            /* ↓ 背景画像を設定する場合 */
+            /* background-image: url('path/to/your/hero-image.jpg'); */
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            color: var(--white);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--white);
+        }
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .hero .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .hero .cta-button {
+            padding: 12px 30px;
+        }
+        .hero .cta-button.advertiser {
+            background: var(--accent-color);
+        }
+        .hero .cta-button.salon {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- 2. デュアルプロブレム --- */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .problem-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+        .problem-card h3 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .problem-card ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+        .problem-card li {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .problem-card li::before {
+            content: '✔';
+            position: absolute;
+            left: -25px;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+        
+        /* --- 3. ソリューション --- */
+        .solution {
+            text-align: center;
+        }
+        .solution-image {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            /* ここにWin-Win-Winの図を配置 */
+        }
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .solution-item {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .solution-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        .solution-conclusion {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 30px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            font-weight: 700;
+        }
+
+        /* --- 5. 実績データ --- */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .data-table th, .data-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .data-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+        .data-table td:nth-child(2) {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        .data-table tr:nth-child(even) {
+            background-color: var(--white);
+        }
+
+        /* --- 6. 選ばれる理由 & メリット --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .feature-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--accent-color);
+        }
+        .feature-card .number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            opacity: 0.5;
+        }
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* --- メリットセクション (広告主/サロン) --- */
+        .merit-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--secondary-color);
+        }
+        .merit-card h4 {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* --- 9. ご利用イメージ --- */
+        .usage-image {
+            text-align: center;
+        }
+        .usage-image img {
+            max-width: 80%;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* --- 11. 導入の流れ --- */
+        .steps-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .step-card {
+            text-align: center;
+            z-index: 2;
+        }
+        .step-card .icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 0 0 5px var(--white), 0 0 0 7px var(--secondary-color);
+        }
+        .step-card h4 {
+            margin-bottom: 5px;
+        }
+
+        /* --- 12. FAQ --- */
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+            font-weight: 700;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            padding: 0 20px;
+        }
+        .faq-answer p {
+            padding: 20px 0;
+            margin: 0;
+            border-top: 1px dashed #e2e8f0;
+        }
+        
+        /* --- 13. クロージング --- */
+        .closing {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            border-radius: 20px;
+            padding: 60px 40px;
+        }
+        .closing h2 {
+            color: var(--white);
+            font-size: 2.2rem;
+        }
+        .closing .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #0c1d38;
+            color: #a0aec0;
+        }
+
+        /* --- レスポンシブ対応 --- */
+        @media (max-width: 992px) {
+            .problem-grid, .solution-grid, .features-grid, .steps-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .problem-grid, .solution-grid, .features-grid, .steps-container {
+                grid-template-columns: 1fr;
+            }
+            .closing .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. ファーストビュー -->
+    <header class="hero">
+        <div class="container">
+            <h1>広告を"見たい"に変える、革命。</h1>
+            <h2>美容サロン顧客に直接届く、<br class="sp-br">特許取得済の新広告プラットフォーム</h2>
+            <p>
+                ユーザーが自ら広告を見て、サロンで使えるポイントを貯める。<br>
+                広告主には<strong>【驚異のクリック率22%】</strong>を、サロンには<strong>【顧客囲い込みと新収益】</strong>を。<br>
+                広告の常識を覆す、持続可能なエコシステムが、ここにあります。
+            </p>
+            <div class="cta-buttons">
+                <a href="#advertiser" class="cta-button advertiser">広告出稿をご検討の企業様</a>
+                <a href="#salon" class="cta-button salon">加盟をご検討のサロン様</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 2. デュアルプロブレム -->
+        <section id="problem">
+            <div class="container">
+                <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+                <p class="section-subtitle">広告主様とサロン様、それぞれの場所で、同じ課題に直面しています。</p>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <h3>広告主様のお悩み</h3>
+                        <ul>
+                            <li>広告が「邪魔者」扱いされ、すぐスキップされてしまう。</li>
+                            <li>届けたいターゲット層に、本当に広告が届いているか分からない。</li>
+                            <li>高い広告費をかけても、費用対効果が見合わない。</li>
+                            <li>ユーザーの個人情報利用への懸念から、広告にマイナスイメージがつくことも。</li>
+                        </ul>
+                    </div>
+                    <div class="problem-card">
+                        <h3>サロン様のお悩み</h3>
+                        <ul>
+                            <li>お客様が他店に流出しないか、常に不安がある。</li>
+                            <li>他のサロンとの差別化が難しく、価格競争に陥りがち。</li>
+                            <li>お客様の来店サイクルや客単価を上げたい。</li>
+                            <li>技術・店販以外の、新たな収益源が欲しい。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ソリューション -->
+        <section id="solution" class="solution">
+            <div class="container">
+                <h2 class="section-title">そのお悩み、「サロポン」がすべて解決します</h2>
+                <p class="section-subtitle">広告主・サロン・顧客、三方よしの「Win-Win-Win エコシステム」</p>
+                
+                <!-- Win-Win-Winの図をここに挿入してください -->
+                <div class="solution-image">
+                    <img src="https://via.placeholder.com/700x400.png?text=Win-Win-Winエコシステムの図" alt="サロポンエコシステム図">
+                </div>
+
+                <div class="solution-grid">
+                    <div class="solution-item">
+                        <h4>【広告主】様は…</h4>
+                        <p>美容に関心が高いユーザーにピンポイントで広告を届け、高いエンゲージメントを実現できます。</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>【顧客（ユーザー）】様は…</h4>
+                        <p>広告を見るだけでポイントが貯まり、いつものサロンで割引として使えるので、広告を積極的に「見たい」存在になります。</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>【サロン】様は…</h4>
+                        <p>顧客が貯めたポイントは自店でしか使えないため強力な囲い込みに。さらに広告収入という新たな収益も生まれます。</p>
+                    </div>
+                </div>
+
+                <div class="solution-conclusion">
+                    サロポンは、業界外の広告費を美容業界に還流させ、関わるすべての人を豊かにする、新しい資金循環型ビジネスモデルです。
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 圧倒的な実績 -->
+        <section id="data">
+            <div class="container">
+                <h2 class="section-title">その効果は、数字が証明しています</h2>
+                <p class="section-subtitle">従来の広告媒体と比較して、ユーザーから圧倒的に高い反応率・利用率を誇ります。</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指標</th>
+                            <th>サロポン</th>
+                            <th>他媒体平均</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>LINE開封率</strong></td>
+                            <td>約76%</td>
+                            <td>LINE広告（通常）: 約5〜15%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>クリック率</strong></td>
+                            <td>約22%</td>
+                            <td>Google広告: 約3〜5% / Instagram: 約0.2〜1.2% / LINE広告: 約1〜3%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>クーポン利用率</strong></td>
+                            <td>約76%</td>
+                            <td>メルマガ: 約2〜5% / アプリ: 約10〜20% / 飲食系クーポン: 約30〜40%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- 6. 選ばれる理由 -->
+        <section id="reasons">
+            <div class="container">
+                <h2 class="section-title">サロポンが選ばれる理由</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="number">01</div>
+                        <h3>流す広告から、"見せる"広告へ</h3>
+                        <p>ユーザーが自ら視聴するため、広告内容がしっかり届きます。WEBサイトへの誘導やアンケート機能で、ただの広告にとどまらないマーケティング活用が可能です。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="number">02</div>
+                        <h3>創業100年の美容ディーラーが運営</h3>
+                        <p>美容業界を熟知したMIYOSHIYAが、長年培ったサロン様との信頼関係を基盤に運営する、業界の未来を考えたサービスです。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="number">03</div>
+                        <h3>特許取得済のビジネスモデル</h3>
+                        <p>ポイントは登録サロンでしか使えない「顧客囲い込み」の仕組みと、サロンに広告収入が生まれる「収益分配」の仕組みは、サロポンだけの独自モデルです。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 7. 広告主様へのメリット -->
+        <section id="advertiser">
+            <div class="container">
+                <h2 class="section-title">【広告主様へ】<br>広告効果を最大化する、サロポンの提供価値</h2>
+                <p class="section-subtitle">広告費を、"投資"に変える。</p>
+                <div class="merit-card">
+                    <h4>✅ 高精度なターゲティング</h4>
+                    <p>「青山エリアの30代女性」「郊外在住の40代ファミリー層」など、サロンの客層とユーザー情報を掛け合わせ、届けたい相手に的確にアプローチします。</p>
+                </div>
+                <div class="merit-card">
+                    <h4>✅ 感謝される広告体験</h4>
+                    <p>ユーザーにとって広告は「有益なポイントをくれるもの」。ブロックされるどころか、感謝される存在へと変わります。</p>
+                </div>
+                 <div class="merit-card">
+                    <h4>✅ 多角的なマーケティング活用</h4>
+                    <p>広告動画だけでなく、アンケート実施による市場調査や、販売サイトへの直接誘導、さらにはサロンでのテスト販売（※オプション）まで、多様な施策が可能です。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. サロン様へのメリット -->
+        <section id="salon">
+            <div class="container">
+                <h2 class="section-title">【サロン様へ】<br>経営を強くする、サロポンの提供価値</h2>
+                <p class="section-subtitle">お客様の満足が、サロンの利益に直結する。</p>
+                <div class="merit-card">
+                    <h4>✅ 圧倒的な顧客囲い込み（リピート率UP）</h4>
+                    <p>貯めたポイントはあなたのサロンでしか使えません。「ポイントが貯まったから、また行こう」という来店動機を生み出し、他店への流出を強力に防ぎます。</p>
+                </div>
+                <div class="merit-card">
+                    <h4>✅ ポイントは全額サロポンが負担</h4>
+                    <p>お客様が利用したポイントは、【現金】または【20%増額の商材】で100%補填。サロン様の負担は一切ありません。</p>
+                </div>
+                <div class="merit-card">
+                    <h4>✅ 新たな"広告収入"が生まれる</h4>
+                    <p>お客様のポイント利用が増えるほど、その約10%をサロン様にキャッシュバック。技術・店販以外の、全く新しい収益の柱を確立できます。</p>
+                </div>
+                <div class="merit-card">
+                    <h4>✅ 今なら導入コスト"ゼロ"</h4>
+                    <p><strong>先行協力サロン様（100サロン限定）</strong>は、初期費用・月額費用など諸経費すべて無料でスタートできます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. ご利用イメージ -->
+        <section id="usage" class="usage-image">
+             <div class="container">
+                <h2 class="section-title">LINEで完結する、かんたん・便利な体験</h2>
+                <p class="section-subtitle">お客様は、使い慣れたLINEアプリから、いつでもどこでも広告を視聴してポイントを貯め、お店で簡単に利用できます。</p>
+                 <!-- LINEリッチメニューの画像をここに挿入 -->
+                <img src="https://via.placeholder.com/800x450.png?text=LINEリッチメニュー画面の画像" alt="サロポン利用イメージ">
+             </div>
+        </section>
+
+        <!-- 11. 導入の流れ -->
+        <section id="flow">
+            <div class="container">
+                <h2 class="section-title">サロポンを始めるのは、とても簡単です</h2>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="icon">01</div>
+                        <h4>お問い合わせ</h4>
+                        <p>下のフォームからお気軽にご連絡ください。詳細をご説明します。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="icon">02</div>
+                        <h4>LINE公式設定</h4>
+                        <p>LINE公式アカウントの設定を弊社が丁寧にサポートします。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="icon">03</div>
+                        <h4>お客様へご案内</h4>
+                        <p>お友達登録をご案内するだけ。後は自動で動き出します。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="icon">04</div>
+                        <h4>運用スタート！</h4>
+                        <p>毎月、利用ポイントの補填と広告収入をお支払いします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. よくあるご質問 -->
+        <section id="faq">
+            <div class="container">
+                <h2 class="section-title">よくあるご質問</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">【広告主様】どんな業種の広告でも出稿できますか？</div>
+                        <div class="faq-answer">
+                            <p>美容やライフスタイルに関心が高いユーザー層に響く商材・サービスであれば、幅広くご検討いただけます。まずはお気軽にご相談ください。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">【広告主様】効果測定はどのように行えますか？</div>
+                        <div class="faq-answer">
+                            <p>視聴完了率、クリック数、アンケート回答結果など、詳細なレポートをご提供します。より深いマーケティング分析が可能です。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">【サロン様】本当に費用はかからないのですか？</div>
+                        <div class="faq-answer">
+                            <p>はい、先行協力サロン様（100サロン様限定）に限り、初期費用・月額費用は一切かかりません。完全無料でスタートいただけますので、ご安心ください。</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <div class="faq-question">【サロン様】LINE公式アカウントを持っていません。</div>
+                        <div class="faq-answer">
+                            <p>アカウントの開設から初期設定まで、弊社スタッフが無料で丁寧にサポートいたします。ITが苦手なオーナー様でもスムーズに導入いただけます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. クロージング＆CTA -->
+        <section id="closing-section">
+            <div class="container">
+                <div class="closing">
+                    <h2>さあ、広告とサロン経営の未来を、<br>共に創りませんか？</h2>
+                    <p>「サロポン」は単なる広告サービスではありません。<br>広告主の価値を最大化し、サロンの経営を安定させ、お客様を笑顔にする。<br>美容業界全体を強くする、持続可能な未来への第一歩です。</p>
+                    <div class="cta-buttons">
+                        <a href="#contact-advertiser" class="cta-button">広告出稿に関するお問い合わせ・資料請求（無料）</a>
+                        <a href="#contact-salon" class="cta-button secondary">サロン加盟（先行無料プラン）に関するお問い合わせ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Salopon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- JavaScript for FAQ Accordion ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 他のアクティブな項目を閉じる (任意)
+                    // faqItems.forEach(otherItem => {
+                    //     if (otherItem !== item) {
+                    //         otherItem.classList.remove('active');
+                    //         otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    //     }
+                    // });
+
+                    // クリックされた項目を開閉する
+                    const answer = item.querySelector('.faq-answer');
+                    if (item.classList.contains('active')) {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = null;
+                    } else {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
