@@ -1,0 +1,19 @@
+{
+  "speech_rate": 1.1,
+  "pitch_shift": 0,
+  "hashtags": ["#サロポン", "#サロン経営", "#美容室経営", "#サロンオーナー", "#美容室オーナー", "#リピート率アップ", "#集客", "#サロン集客"],
+  "cta": {
+    "join": {
+      "telop": "先行[[100サロン限定]]\n初期費用・月額費用\n[[0円]]で加盟受付中",
+      "button": "加盟店登録はこちら",
+      "url": "https://www.salopon-salon.miyoshiya-dx-service.com/",
+      "narration": "先行百サロン限定で、初期費用も月額費用もゼロ円。加盟店登録は、画面のユーアールエルからどうぞ。"
+    },
+    "site": {
+      "telop": "サロポンの仕組みを\n[[もっと詳しく]]",
+      "button": "サロポン公式サイト",
+      "url": "https://www.salopon-salon.miyoshiya-dx-service.com/",
+      "narration": "サロポンの詳しい仕組みは、画面のユーアールエルから公式サイトをチェックしてください。"
+    }
+  }
+}
